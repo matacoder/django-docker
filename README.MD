@@ -23,7 +23,13 @@ I know! So underscored `_settings` folder is always close to top and easy to fin
 
 ## What next step?
 
-Create your app using `python manage.py startapp my_new_app`.
+Export all your `.env` environment variables with command: 
+
+`set -o allexport; source .env; set +o allexport`
+
+Create your app using:
+
+`python manage.py startapp my_new_app`.
 
 ## What You Develop is What You Get
 
