@@ -3,7 +3,7 @@
 
 This is a magic repository for everyone who wants to start developing and do not want to worry about initial django and docker setup.
 
-## What included
+## What is included
 
 - Django
 - Nginx
@@ -13,6 +13,17 @@ This is a magic repository for everyone who wants to start developing and do not
 - Caddy config for fast SSL + domain deploy
 - Poetry dependency manager
 - Initial entrypoint to take care of django and postgres setup
+- Black code formatter
+
+## Why _settings?
+
+Do you know that frustration when you are looking for your setting file directory?
+
+I know! So underscored `_settings` folder is always close to top and easy to find.
+
+## What next step?
+
+Create your app using `python manage.py startapp my_new_app`.
 
 ## What You Develop is What You Get
 
