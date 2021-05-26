@@ -1,5 +1,5 @@
 # Django + Docker Template
-<img src=https://raw.githubusercontent.com/matacoder/matacoder/main/django-docker.png>
+<img src=https://raw.githubusercontent.com/matacoder/matacoder/main/django-docker-sea.png>
 
 This is a magic repository for everyone who wants to start developing and do not want to worry about initial django and docker setup.
 
