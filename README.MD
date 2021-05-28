@@ -44,26 +44,29 @@ Django's templates engine is reloading without container needed to restart
 Docker context is a bridge to your remote server to run docker commands on your local pc or mac.
 
 #### STEP 0: Create new context to remote control your server docker (once)
+
 `docker context create new_ip --docker "host=ssh://username@ip"`
 
-#### STEP 1: Build and push your docker image on local PC (use variables in .env)
-`docker build -t username/project:latest .` (don't forget dot at the end)
+#### STEP 1: Switch to remote server docker
 
-`docker push username/project:latest`
-
-#### STEP 2: Switch to remote server docker
 `docker context use new_ip`
 
-#### STEP 3: Down your compose, pull new image, up your compose
+#### STEP 2: Build image DIRECTLY on remote server (use variables in .env)
+
+`docker build -t username/project:latest .`
+
+#### STEP 3: Down your compose gracefully on remote server
+
 `docker compose -f docker-compose-prod.yaml down`
 
 Here consider deleting static volume if you have static files modified
 
-`docker pull username/project:latest`
+#### STEP 4: Up your compose, force recreate containers using new image
 
 `docker compose -f docker-compose-prod.yaml up -d --force-recreate`
 
-#### STEP 4: Don't forget to switch back to your local docker
+#### STEP 5: Don't forget to switch back to your local docker
+
 `docker context use default`
 
 # Run your site with Caddy Server
