@@ -8,14 +8,22 @@ This is a magic repository for everyone who wants to start developing and do not
 - Django
 - Nginx
 - PostgreSQL
+- Gunicorn  
 - Docker Compose for development
 - Docker Compose for production
 - Caddy config for fast SSL + domain deploy
 - Poetry dependency manager
 - Initial entrypoint to take care of django and postgres setup
 - Black code formatter
+- Basic Workflow for GitHub Actions
+- Accounts app with all authorisation forms implemented on Bootstrap 5
+- Basic template to test login/logout
+- Sign up form
+- Main app to immediately start writing your first business logic
+- Django Crisp Forms installed and used in accounts app
+- All Admin Models register automatically
 
-## Why _settings?
+## Why project is named _settings?
 
 Do you know that frustration when you are looking for your setting file directory?
 
@@ -29,7 +37,9 @@ Export all your `.env` environment variables with command:
 
 Create your app using:
 
-`python manage.py startapp my_new_app`.
+`python manage.py startapp my_new_app`
+
+Or just use `main` app. It is already here and urls are included!
 
 ## What You Develop is What You Get
 
@@ -39,7 +49,7 @@ Restart your django container (using Docker GUI) everytime you make a change in 
 
 Django's templates engine is reloading without container needed to restart
 
-## Fast Deploy Using Docker Context
+## Fast Deploy Using Docker Context (Manually)
 
 Docker context is a bridge to your remote server to run docker commands on your local pc or mac.
 
@@ -80,9 +90,9 @@ sudo caddy run
 
 Consider adding `caddy` to [linux start up sequence](https://caddy.community/t/want-caddy-to-run-automatically-on-boot/5240).
 
-# Deploy using GitHub Actions
+# Deploy using GitHub Actions (automatically)
 
-You can not use experimental `docker compose` feature in GitHub Actions yet, but `docker-compose` works fine.
+You can not use experimental `docker compose` feature in GitHub Actions yet, but `docker-compose` works just fine.
 
 Do not forget to add GitHub secrets for:
 
@@ -94,7 +104,7 @@ For all other docker-related secrets you can use sole `ENV` secret. Run this com
 
 `base64 -i .env`
 
-That will give you string array very alike SSH key. Save it to `ENV` secret. Now look at workflow:
+That will give you string array very alike SSH key. Save it to `ENV` secret. Now look at workflow.
 
 `RollyPeres/base64-to-path@v1` action will extract this to `.env` file. That is fast and reliable way to export all your environment variable at once.
 

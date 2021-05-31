@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block header %}Register{% endblock %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="bg-light p-5 rounded">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <br/>
+            <button type="submit" class="btn btn-primary">
+                Register
+            </button>
+        </form>
+    </div>
+{% endblock %}
