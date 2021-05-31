@@ -79,3 +79,67 @@ sudo caddy run
 ```
 
 Consider adding `caddy` to [linux start up sequence](https://caddy.community/t/want-caddy-to-run-automatically-on-boot/5240).
+
+# Deploy using GitHub Actions
+
+You can not use experimental `docker compose` feature in GitHub Actions yet, but `docker-compose` works fine.
+
+Do not forget to add GitHub secrets for:
+
+- SSH_KEY
+- IP_HOST
+- SSH_USER
+
+For all other docker-related secrets you can use sole `ENV` secret. Run this command within project:
+
+`base64 -i .env`
+
+That will give you string array very alike SSH key. Save it to `ENV` secret. Now look at workflow:
+
+`RollyPeres/base64-to-path@v1` action will extract this to `.env` file. That is fast and reliable way to export all your environment variable at once.
+
+This is example workflow you need to implement:
+
+```yaml
+name: Django-Docker workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  magic_deploy:
+    name: Deploy to server with remote docker-compose
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install SSH key to github server
+        uses: kielabokkie/ssh-key-and-known-hosts-action@v1.1.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+          ssh-host: ${{ secrets.IP_HOST }}
+
+      - name: Install latest version of docker with experimental compose support
+        run: |
+          pip install docker-compose
+
+      - name: Generate env file from Base64 encoded string (base64 -i .env)
+        uses: RollyPeres/base64-to-path@v1
+        with:
+          filePath: ${{ github.workspace }}/.env
+          encodedString: ${{ secrets.ENV }}
+
+      - name: Remote docker compose down/up using context (zero files)
+        run: |
+          docker context create remote --docker "host=ssh://${{ secrets.SSH_USER }}@${{ secrets.IP_HOST }}"
+          docker context use remote
+          docker image prune -f
+          docker-compose --context remote -f docker-compose-prod.yaml down
+          docker-compose --context remote -f docker-compose-prod.yaml up -d --build --force-recreate
+```
