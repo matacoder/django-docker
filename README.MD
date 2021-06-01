@@ -21,6 +21,7 @@ This is a magic repository for everyone who wants to start developing and do not
 - Sign up form
 - Main app to immediately start writing your first business logic
 - Django Crisp Forms installed and used in accounts app
+- Django Debug Toolbar! Analyze SQL on-the-fly
 
 ## Why project is named _settings?
 
