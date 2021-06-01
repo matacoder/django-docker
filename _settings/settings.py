@@ -32,9 +32,10 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-DEBUG_TOOLBAR_CONFIG = {
-    "SHOW_TOOLBAR_CALLBACK": lambda request: not request.is_ajax(),
-}
+if DEBUG:
+    DEBUG_TOOLBAR_CONFIG = {
+        "SHOW_TOOLBAR_CALLBACK": lambda request: not request.is_ajax(),
+    }
 
 # Application definition
 
