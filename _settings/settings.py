@@ -33,7 +33,7 @@ INTERNAL_IPS = [
 ]
 
 DEBUG_TOOLBAR_CONFIG = {
-    "SHOW_TOOLBAR_CALLBACK": lambda request: False if request.is_ajax() else True,
+    "SHOW_TOOLBAR_CALLBACK": lambda request: not request.is_ajax(),
 }
 
 # Application definition
