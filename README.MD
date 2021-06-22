@@ -3,7 +3,7 @@
 
 This is a magic repository for everyone who wants to start developing and do not want to worry about initial django and docker setup.
 
-You can see deployed example here: [django-docker.matakov.com](django-docker.matakov.com)
+You can see deployed example here: [django-docker.matakov.com](https://django-docker.matakov.com)
 
 ## What is included
 
