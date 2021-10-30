@@ -1,27 +1,24 @@
-<!doctype html>
-<html lang="en">
-<head>
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% load static %}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-          crossorigin="anonymous">
-    <title>{% block title %}Main page{% endblock %} | Django-Starter</title>
-</head>
-<body>
-<main>
+    <title>H{% block title %}Main page{% endblock %} | Django-Docker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+      {% include "includes/navbar.html" %}
     <div class="container">
-    {% include "includes/navbar.html" %}
-        <h1>{% block header %}Main Page{% endblock %}</h1>
+      <h1 class="title">
+        {% block header %}Main Page{% endblock %}
+      </h1>
+
         {% block content %}
             <!-- Place content in content block -->
         {% endblock content %}
     </div>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
-</body>
+  </section>
+  </body>
 </html>

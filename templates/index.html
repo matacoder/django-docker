@@ -4,28 +4,20 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-    <div class="container my-5">
-        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-            <div class="text-center">
-                <h1 class="display-4 fw-bold">Fascinating Django-Docker</h1>
-                <div class="col-lg-6 mx-auto">
-                    <p class="lead mb-4">All-in-one package you need to fast develop web apps.</p>
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                        <a type="button" class="btn btn-primary btn-lg px-4 me-sm-3" href="https://github.com/matacoder/django-docker">GitHub Page
-                        </a>
-                        <a type="button" class="btn btn-outline-secondary btn-lg px-4" href="https://matakov.com/cv/">
-                            Author blog
-                        </a>
-                    </div>
-                </div>
-                <div class="overflow-hidden" style="max-height: 30vh;">
-                    <div class="container px-5">
-                        <img src="static/django-docker-sea.png"
-                             class="img-fluid border rounded-3 shadow-lg mb-4" alt="Django-Docker"
-                             width="700" height="500" loading="lazy">
-                    </div>
-                </div>
-            </div>
+
+
+    <article class="message is-info">
+        <div class="message-header">
+            <p>Fascinating Django-Docker</p>
+
         </div>
-    </div>
+        <div class="message-body">
+            <p class="content">
+                All-in-one package you need to fast develop web apps.</p>
+            <p class="content">
+            <img src="static/django-docker-sea.png"
+                 class="img-fluid border rounded-3 shadow-lg mb-4" alt="Django-Docker"
+                 width="700" height="500" loading="lazy"></p>
+        </div>
+    </article>
 {% endblock %}
