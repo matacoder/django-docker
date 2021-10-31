@@ -15,7 +15,7 @@ class MarkDown(TemplateView):
 
     def get_context_data(self, **kwargs):
         markdowntext = open(
-            os.path.join(os.path.dirname(__file__), "../README.md")
+            os.path.join(os.path.abspath(os.path.dirname(__name__)), "README.md")
         ).read()
 
         context = super().get_context_data(**kwargs)
