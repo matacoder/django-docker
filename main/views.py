@@ -2,6 +2,9 @@ import os
 
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from loguru import logger
+
+from _settings.settings import BASE_DIR
 
 
 def index(request):
@@ -10,13 +13,14 @@ def index(request):
 
 
 class MarkDown(TemplateView):
-    """Rendering README.md on main page."""
+    """Rendering README.MD on main page."""
     template_name = "index.html"
 
     def get_context_data(self, **kwargs):
-        markdowntext = open(
-            os.path.join(os.path.abspath(os.path.dirname(__name__)), "README.md")
-        ).read()
+        path = os.path.join(BASE_DIR, "README.MD")
+        logger.info(path)
+        with open(path) as readme:
+            markdowntext = readme.read()
 
         context = super().get_context_data(**kwargs)
         context["markdowntext"] = markdowntext
