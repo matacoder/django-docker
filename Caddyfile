@@ -1,3 +1,7 @@
-example.com
+example.com {
+    reverse_proxy 127.0.0.1:1111
+}
 
-reverse_proxy 127.0.0.1:1111
+example2.com {
+    reverse_proxy 127.0.0.1:1122
+}

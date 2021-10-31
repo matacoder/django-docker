@@ -14,6 +14,7 @@ def index(request):
 
 class MarkDown(TemplateView):
     """Rendering README.MD on main page."""
+
     template_name = "index.html"
 
     def get_context_data(self, **kwargs):

@@ -1,9 +1,22 @@
 # Django + Docker Template
+
 <img src=https://raw.githubusercontent.com/matacoder/matacoder/main/django-docker-sea.png>
 
 This is a magic repository for everyone who wants to start developing and do not want to worry about initial django and docker setup.
 
-You can see deployed example here: [django-docker.matakov.com](https://django-docker.matakov.com)
+You can see deployed example here: [https://django-docker.matakov.com](https://django-docker.matakov.com)
+
+Github link: [https://github.com/matacoder/django-docker](https://github.com/matacoder/django-docker)
+
+## What's new in version 2.0
+
+* All styles now are implemented with Bulma CSS framework. 
+* Loguru logger
+* Dark mode (using OS toggle, supported in Safari/Chrome/Firefox)
+* Auto loading README to index page
+* More efficient Github workflow
+* Drop support of Bootstrap and Crispy Forms
+
 
 ## What is included
 
@@ -15,14 +28,14 @@ You can see deployed example here: [django-docker.matakov.com](https://django-do
 - Docker Compose for production
 - Caddy config for fast SSL + domain deploy
 - Poetry dependency manager
+- Loguru logger
 - Initial entrypoint to take care of django and postgres setup
 - Black code formatter
 - Basic Workflow for GitHub Actions
-- Accounts app with all authorisation forms implemented on Bootstrap 5
+- Accounts app with all authorization forms implemented with Bulma CSS
 - Basic template to test login/logout
 - Sign up form
 - Main app to immediately start writing your first business logic
-- Django Crisp Forms installed and used in accounts app
 - Django Debug Toolbar! Analyze SQL on-the-fly
 
 ## Why project is named _settings?

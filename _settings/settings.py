@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "crispy_forms",
     "markdownify.apps.MarkdownifyConfig",
+    "bulma",
 ]
 
 MIDDLEWARE = [
