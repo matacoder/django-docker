@@ -4,20 +4,22 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-
+{% load markdownify %}
 
     <article class="message is-info">
-        <div class="message-header">
-            <p>Fascinating Django-Docker</p>
+    <div class="message-header">
+        <p>Version 2.0</p>
 
-        </div>
-        <div class="message-body">
-            <p class="content">
-                All-in-one package you need to fast develop web apps.</p>
-            <p class="content">
-            <img src="static/django-docker-sea.png"
-                 class="img-fluid border rounded-3 shadow-lg mb-4" alt="Django-Docker"
-                 width="700" height="500" loading="lazy"></p>
-        </div>
+    </div>
+    <div class="message-body">
+    <p class="content">
+        New Django-Docker version now uses Bulma.io for rendering styles.</p>
+
+
+    </div>
     </article>
+    <div class="content">
+
+    {{ markdowntext|markdownify }}
+    </div>
 {% endblock %}
