@@ -15,6 +15,7 @@ Github link: [https://github.com/matacoder/django-docker](https://github.com/mat
 * Dark mode (using OS toggle, supported in Safari/Chrome/Firefox)
 * Auto loading README to index page
 * More efficient Github workflow
+* Added Pagination template
 * Drop support of Bootstrap and Crispy Forms
 
 ## Hosted with Digital Ocean

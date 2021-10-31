@@ -8,3 +8,4 @@ static/admin/*
 /.idea/
 /static/debug_toolbar/
 /.env.prod
+/static/bulma/
