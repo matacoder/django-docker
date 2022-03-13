@@ -18,12 +18,6 @@ Github link: [https://github.com/matacoder/django-docker](https://github.com/mat
 * Added Pagination template
 * Drop support of Bootstrap and Crispy Forms
 
-## Hosted with Digital Ocean
-
-[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=c52561a00c26&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
-
-Click the badge to get $100 on your account (referral link).
-
 ## What is included
 
 - Django
