@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -13,8 +13,7 @@ RUN apt-get -y update && apt-get install -y \
 
 # Install and setup poetry
 RUN pip install -U pip \
-    && apt install -y curl netcat \
-    && curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+    && pip install poetry
 ENV PATH="${PATH}:/root/.poetry/bin"
 
 WORKDIR /code
