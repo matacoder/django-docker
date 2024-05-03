@@ -7,6 +7,7 @@ This is a magic repository for everyone who wants to start developing and do not
 You can see deployed example here: [https://django-docker.matakov.com](https://django-docker.matakov.com)
 
 Github link: [https://github.com/matacoder/django-docker](https://github.com/matacoder/django-docker)
+Redeployed 2024
 
 ## What's new in version 2.0
 
